@@ -21,12 +21,6 @@
                 <input type="text" id ="id" name="id" hidden>
                   <div class="col-lg-4">
                     <div class="form-group invalid">
-                        <label for="maloai" class="form-label">Mã loại</label>
-                        <input type="text" class="form-control" name="maloai" id="maloai" required >
-                    </div>                        
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="form-group invalid">
                       <label for="tenloai" class="form-label">Tên loại</label>
                       <input type="text" class="form-control" name="tenloai" id="tenloai" required >
                     </div>
@@ -50,7 +44,6 @@
     if(docSanp.exists())
     {
         $('#id').val(docSanp.id);
-        $('#maloai').val(docSanp.data().maloai);
         $('#tenloai').val(docSanp.data().tenloai);
     }
     else

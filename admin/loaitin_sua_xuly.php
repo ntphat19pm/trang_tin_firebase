@@ -20,7 +20,6 @@
     const db = getFirestore();
     const docRef = doc(db,"loaitin","<?php echo $_POST['id']; ?>");
     await updateDoc(docRef,{
-        maloai:	<?php echo $_POST['maloai'] ;?>,
         tenloai:'<?php echo $_POST['tenloai'] ;?>',
     });
     location.href = 'loaitin.php';

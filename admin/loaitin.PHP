@@ -16,7 +16,7 @@
                           <table id="example1" class="table table-bordered table-striped">
                             <thead>
                               <tr>
-                                <th class="text-center" scope="col">Mã loại</th>
+                                <th class="text-center" scope="col">STT</th>
                                 <th scope="col">Tên loại</th>  
                                 <th class="text-right" scope="col">Action</th>
                               </tr>
@@ -45,12 +45,14 @@
     const db = getFirestore();
     const querySnapshot = await getDocs(collection(db,"loaitin"));
     var output = "";
+    var i=0;
     querySnapshot.forEach((doc) => {
-        output += '<tr>';
-            output += '<td>'+ doc.data().maloai+'</td>';
-            output += '<td>'+ doc.data().tenloai+'</td>';
-            output += '<td><div class="dropdown"><button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button><div class="dropdown-menu"><a class="dropdown-item" href="loaitin_sua.php?id='+ doc.id+'"><i class="bx bx-edit-alt me-1"></i> Edit</a><a class="dropdown-item" href="loaitin_xoa_xuly.php?id='+ doc.id+'" onclick="return confirm(\'Bạn có muốn xóa '+ doc.data().tenloai+' không ?\')"><i class="bx bx-trash me-1"></i> Delete</a></div></div></td>';
-        output += '</tr>';
+      i++
+      output += '<tr>';
+          output += '<td>'+ i+'</td>';
+          output += '<td>'+ doc.data().tenloai+'</td>';
+          output += '<td><div class="dropdown"><button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button><div class="dropdown-menu"><a class="dropdown-item" href="loaitin_sua.php?id='+ doc.id+'"><i class="bx bx-edit-alt me-1"></i> Edit</a><a class="dropdown-item" href="loaitin_xoa_xuly.php?id='+ doc.id+'" onclick="return confirm(\'Bạn có muốn xóa '+ doc.data().tenloai+' không ?\')"><i class="bx bx-trash me-1"></i> Delete</a></div></div></td>';
+      output += '</tr>';
     });
     $('#hienthi').html(output);
 </script>

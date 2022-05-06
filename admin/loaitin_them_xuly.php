@@ -19,7 +19,6 @@
     import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js';
     const db= getFirestore();
     const docRef = await addDoc (collection (db, "loaitin"),{
-        maloai: <?php echo $_POST ['maloai']; ?>,
         tenloai: '<?php echo $_POST['tenloai']; ?>',
     }) ;
     location.href = 'loaitin.php';
