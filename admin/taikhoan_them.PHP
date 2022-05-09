@@ -45,7 +45,7 @@
                    <div class="col-lg-4">
                     <div class="form-group invalid">
                       <label for="email" class="form-label">Email</label>
-                      <input type="text" class="form-control" name="password" id="password" required >
+                      <input type="text" class="form-control" name="email" id="email" required >
                     </div>
                   </div>
                    <div class="col-lg-4">

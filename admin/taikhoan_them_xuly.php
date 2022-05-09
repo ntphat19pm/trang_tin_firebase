@@ -19,11 +19,11 @@
     import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js';
     const db= getFirestore();
     const docRef = await addDoc (collection (db, "taikhoan"),{
-        user: <?php echo $_POST ['user']; ?>,
+        user: '<?php echo $_POST ['user']; ?>',
         password: '<?php echo $_POST['password']; ?>',
-        username: <?php echo $_POST ['username']; ?>,
+        username: '<?php echo $_POST ['username']; ?>',
         sdt: '<?php echo $_POST['sdt']; ?>',
-        email: <?php echo $_POST ['email']; ?>,
+        email: '<?php echo $_POST ['email']; ?>',
         chucvu: '<?php echo $_POST['chucvu']; ?>',
     }) ;
     location.href = 'taikhoan.php';

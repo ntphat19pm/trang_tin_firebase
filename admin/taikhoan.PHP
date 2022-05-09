@@ -51,8 +51,19 @@
     var output = "";
     querySnapshot.forEach((doc) => {
         output += '<tr>';
-            output += '<td>'+ doc.data().maloai+'</td>';
-            output += '<td>'+ doc.data().tenloai+'</td>';
+            output += '<td>'+ doc.data().user+'</td>';
+            output += '<td>'+ doc.data().password+'</td>';
+            output += '<td>'+ doc.data().username+'</td>';
+            output += '<td>'+ doc.data().sdt+'</td>';
+            output += '<td>'+ doc.data().email+'</td>';
+            if (doc.data().chucvu == 1)
+            {
+              output += '<td>'+ 'Quản Lý'+'</td>';
+            }
+            else 
+            {
+              output += '<td>'+ 'Nhân Viên'+'</td>';
+            }
             output += '<td><div class="dropdown"><button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button><div class="dropdown-menu"><a class="dropdown-item" href="taikhoan_sua.php?id='+ doc.id+'"><i class="bx bx-edit-alt me-1"></i> Edit</a><a class="dropdown-item" href="taikhoan_xoa_xuly.php?id='+ doc.id+'" onclick="return confirm(\'Bạn có muốn xóa '+ doc.data().username+' không ?\')"><i class="bx bx-trash me-1"></i> Delete</a></div></div></td>';
         output += '</tr>';
     });
