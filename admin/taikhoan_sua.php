@@ -21,26 +21,42 @@
                   <input type="text" id ="id" name="id" hidden>
                   <div class="col-lg-4">
                     <div class="form-group invalid">
-                        <label for="user" class="form-label">Tài khoản</label>
-                        <input type="text" class="form-control" name="user" id="user" required >
-                    </div>                        
-                  </div>
-                  <div class="col-lg-4">
-                    <div class="form-group invalid">
-                      <label for="password" class="form-label">Mật khẩu</label>
-                      <input type="text" class="form-control" name="password" id="password" required >
-                    </div>
-                  </div>
-                   <div class="col-lg-4">
-                    <div class="form-group invalid">
-                      <label for="username" class="form-label">Tên người dùng</label>
+                      <label for="username" class="form-label">Họ tên nhân viên</label>
                       <input type="text" class="form-control" name="username" id="username" required >
                     </div>
                   </div>
-                   <div class="col-lg-4">
+                  <div class="col-lg-2">
+                    <div class="form-group invalid">
+                      <label for="gioitinh" class="form-label">Giới tính</label>
+                      <select name="gioitinh" id="gioitinh" required class="form-control">
+                            <option> - chọn - </option>
+                            <option value="0">Nữ</option>
+                            <option value="1">Nam</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group invalid">
+                        <label for="ngaysinh" class="form-label">Ngày sinh</label>
+                        <input type="date" class="form-control" name="ngaysinh" id="ngaysinh" required >
+                    </div>                        
+                  </div>                 
+                  <div class="col-lg-4">
                     <div class="form-group invalid">
                       <label for="sdt" class="form-label">Sđt </label>
                       <input type="text" class="form-control" name="sdt" id="sdt" required >
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group invalid">
+                      <label for="diachi" class="form-label">Địa chỉ</label>
+                      <input type="text" class="form-control" name="diachi" id="diachi" required >
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group invalid">
+                      <label for="cmnd" class="form-label">CMND/CCCD</label>
+                      <input type="text" class="form-control" name="cmnd" id="cmnd" required >
                     </div>
                   </div>
                    <div class="col-lg-4">
@@ -49,7 +65,7 @@
                       <input type="text" class="form-control" name="email" id="email" required >
                     </div>
                   </div>
-                   <div class="col-lg-4">
+                  <div class="col-lg-4">
                     <div class="form-group invalid">
                       <label for="chucvu" class="form-label">Chức vụ</label>
                       <select name="chucvu" id="chucvu" required class="form-control">
@@ -59,6 +75,19 @@
                         </select>
                     </div>
                   </div>
+                  <div class="col-lg-4">
+                    <div class="form-group invalid">
+                        <label for="user" class="form-label">Tên đăng nhập</label>
+                        <input type="text" class="form-control" name="user" id="user" required >
+                    </div>                        
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group invalid">
+                      <label for="password" class="form-label">Mật khẩu</label>
+                      <input type="text" class="form-control" name="password" id="password" required >
+                    </div>
+                  </div>
+                </div>
 
             </form>
           </div>
@@ -84,6 +113,10 @@
         $('#sdt').val(docSanp.data().sdt);
         $('#email').val(docSanp.data().email);
         $('#chucvu').val(docSanp.data().chucvu);
+        $('#gioitinh').val(docSanp.data().gioitinh);
+        $('#diachi').val(docSanp.data().diachi);
+        $('#cmnd').val(docSanp.data().cmnd);
+        $('#ngaysinh').val(docSanp.data().ngaysinh);
     }
     else
     {

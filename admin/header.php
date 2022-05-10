@@ -389,7 +389,19 @@
             <li class="menu-item">
               <a href="taikhoan.php" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Boxicons">Quản lý nhân viên</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="taikhoan.php" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
                 <div data-i18n="Boxicons">Quản lý tài khoản</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="dangnhap.php" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Boxicons">Đăng nhập</div>
               </a>
             </li>
 
@@ -559,7 +571,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="auth-login-basic.html">
+                      <a class="dropdown-item" href="dangxuat_xuly.php">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
                       </a>

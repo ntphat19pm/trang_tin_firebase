@@ -25,6 +25,10 @@
         sdt: '<?php echo $_POST['sdt']; ?>',
         email: '<?php echo $_POST ['email']; ?>',
         chucvu: '<?php echo $_POST['chucvu']; ?>',
+        cmnd: '<?php echo $_POST['cmnd']; ?>',
+        diachi: '<?php echo $_POST['diachi']; ?>',
+        gioitinh: '<?php echo $_POST['gioitinh']; ?>',
+        ngaysinh: '<?php echo $_POST['ngaysinh']; ?>',
     }) ;
     location.href = 'taikhoan.php';
 </script>

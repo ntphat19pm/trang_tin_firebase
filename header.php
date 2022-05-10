@@ -99,7 +99,14 @@
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="category.html" class="nav-item nav-link">Category</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Danh mục bài viết</a>
+                        <div class="dropdown-menu rounded-0 m-0" id="danhmuc">
+                            <a href="#" class="dropdown-item">Menu item 1</a>
+                            <a href="#" class="dropdown-item">Menu item 2</a>
+                            <a href="#" class="dropdown-item">Menu item 3</a>
+                        </div>
+                    </div>
                     <a href="single.html" class="nav-item nav-link">Single News</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
@@ -122,3 +129,20 @@
         </nav>
     </div>
     <!-- Navbar End -->
+
+    <script type="module">
+	import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+    const db = getFirestore();
+    const querySnapshot = await getDocs(collection(db,"loaitin"));
+    var output = "";
+    var i=0;
+    querySnapshot.forEach((doc) => {
+      i++
+      output += '<tr>';
+          output += '<td>'+ i+'</td>';
+          output += '<td>'+ doc.data().tenloai+'</td>';
+          output += '<td><div class="dropdown"><button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button><div class="dropdown-menu"><a class="dropdown-item" href="loaitin_sua.php?id='+ doc.id+'"><i class="bx bx-edit-alt me-1"></i> Edit</a><a class="dropdown-item" href="loaitin_xoa_xuly.php?id='+ doc.id+'" onclick="return confirm(\'Bạn có muốn xóa '+ doc.data().tenloai+' không ?\')"><i class="bx bx-trash me-1"></i> Delete</a></div></div></td>';
+      output += '</tr>';
+    });
+    $('#hienthi').html(output);
+</script>

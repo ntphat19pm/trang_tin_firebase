@@ -10,15 +10,14 @@
                   <div class="card">
                     <div class="d-flex align-items-end row">
                         <div class="card-body">
-                          <h5 class="card-title text-primary text-center">Bảng loại tin</h5>
+                          <h5 class="card-title text-primary text-center">Bảng tài khoản</h5>
                           <a href="taikhoan_them.php" class="btn btn-sm btn-outline-primary">Thêm tài khoản</a>
                           <p class="mb-4">
                           <table id="example1" class="table table-bordered table-striped">
                             <thead>
                               <tr>
-                                <th class="text-center" scope="col">User</th>
-                                <th scope="col">Pass Word </th>  
-                                <th scope="col">Tên người dùng  </th>  
+                                <th scope="col">Họ tên nhân viên </th>  
+                                <th scope="col">Giới tính </th>  
                                 <th scope="col">Sđt </th>  
                                 <th scope="col">Email  </th>
                                 <th scope="col">Chức vụ </th>                                  
@@ -51,9 +50,15 @@
     var output = "";
     querySnapshot.forEach((doc) => {
         output += '<tr>';
-            output += '<td>'+ doc.data().user+'</td>';
-            output += '<td>'+ doc.data().password+'</td>';
             output += '<td>'+ doc.data().username+'</td>';
+            if (doc.data().gioitinh == 1)
+            {
+              output += '<td>'+ 'Nam'+'</td>';
+            }
+            else 
+            {
+              output += '<td>'+ 'Nữ'+'</td>';
+            }
             output += '<td>'+ doc.data().sdt+'</td>';
             output += '<td>'+ doc.data().email+'</td>';
             if (doc.data().chucvu == 1)

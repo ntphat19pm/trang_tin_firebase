@@ -5,7 +5,7 @@
       <div class="container">
         <div class="card mt-5">
           <div class="card-header">
-            Xử lý xoá loại tin
+            Xử lý xoá tài khoản
           </div>
           <div class="card-body">
             
