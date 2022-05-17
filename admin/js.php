@@ -59,3 +59,33 @@
 </script>
   </body>
 </html>
+
+<script src="//cdn.ckeditor.com/4.17.1/full/ckeditor.js"></script>
+<script>
+  // CKEDITOR.replace('chitiet');
+  // CKEDITOR.replace('chitiet1');
+  // CKEDITOR.replace('chitiet2');
+  // CKEDITOR.replace('traloi');
+  CKEDITOR.replace('noidung');
+  CKEDITOR.replace('mota');
+
+  (function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
